@@ -103,9 +103,8 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: 'git'
-  repo: https://github.com/veegn/veegn
+  repo: https://github.com/veegn/veegn.git
   branch: pages
   message: 'hexo new page'
   name: veegn
   email: veegn.me@gmail.com
-  token: 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
