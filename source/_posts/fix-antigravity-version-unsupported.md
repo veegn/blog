@@ -1,8 +1,14 @@
 ---
 title: 深度解析：修复 OpenClaw 中 Antigravity 模型“版本不再支持”故障
-date: 2026-02-05 11:00:00
-tags: [OpenClaw, Antigravity, Gemini, 故障排查, 逆向工程]
+tags:
+  - OpenClaw
+  - Antigravity
+  - Gemini
+  - 故障排查
+  - 逆向工程
 categories: 架构实践
+abbrlink: e4a0095c
+date: 2026-02-05 11:00:00
 ---
 
 # 深度解析：修复 OpenClaw 中 Antigravity 模型“版本不再支持”故障

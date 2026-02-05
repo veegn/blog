@@ -1,8 +1,14 @@
 ---
 title: Arthas 生产环境实战手册：深度排查与故障修复
-date: 2021-06-30 23:03:03
-tags: [Java, 诊断工具, Arthas, 性能优化, JVM]
+tags:
+  - Java
+  - 诊断工具
+  - Arthas
+  - 性能优化
+  - JVM
 categories: 架构实践
+abbrlink: 75b0d91e
+date: 2021-06-30 23:03:03
 ---
 
 # Arthas 生产环境实战手册：深度排查与故障修复
