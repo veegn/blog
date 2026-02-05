@@ -1,11 +1,11 @@
 ---
-title: Arthas 深度实践：高性能 Java 生产环境诊断体系构建
+title: Arthas 生产环境实战手册：深度排查与故障修复
 date: 2021-06-30 23:03:03
 tags: [Java, 诊断工具, Arthas, 性能优化, JVM]
 categories: 架构实践
 ---
 
-# Arthas 深度实践：高性能 Java 生产环境诊断体系构建
+# Arthas 生产环境实战手册：深度排查与故障修复
 
 ## 1. 概述
 
