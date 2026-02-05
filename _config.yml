@@ -4,7 +4,7 @@
 
 # Site
 title: VEEGN'S BLOG
-subtitle: 'Java 专家与系统架构实践'
+subtitle: ''
 description: '专注 Java 性能调优、JVM 深度诊断、网络安全及前沿 AI Agent 技术的实战记录。'
 keywords: Java, Arthas, JVM, 性能调优, OpenClaw, 网络安全, DoH
 author: veegn
