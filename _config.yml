@@ -4,8 +4,8 @@
 
 # Site
 title: VEEGN'S BLOG
-subtitle: ''
-description: '专注 Java 性能调优、JVM 深度诊断、网络安全及前沿 AI Agent 技术的实战记录。'
+subtitle: '有用比好听更重要'
+description: '记录在 Java 调优、网络工具、自动化脚本上的真实踩坑和经验。'
 keywords: Java, Arthas, JVM, 性能调优, OpenClaw, 网络安全, DoH
 author: veegn
 language: zh-CN
