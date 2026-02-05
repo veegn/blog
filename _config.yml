@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: VEEGN`S BLOG
-subtitle: ''
-description: ''
-keywords: veegn,java
+title: VEEGN'S BLOG
+subtitle: 'Java 专家与系统架构实践'
+description: '专注 Java 性能调优、JVM 深度诊断、网络安全及前沿 AI Agent 技术的实战记录。'
+keywords: Java, Arthas, JVM, 性能调优, OpenClaw, 网络安全, DoH
 author: veegn
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -108,3 +108,17 @@ deploy:
   message: 'hexo new page'
   name: veegn
   email: veegn.me@gmail.com
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
+# Symbols Count and Time
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
