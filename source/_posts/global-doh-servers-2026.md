@@ -88,6 +88,7 @@ DoH 是目前保护个人网络隐私最简单也最有效的方法之一。在 
 
 ---
 **参考文献**
-1. RFC 8484: DNS Queries over HTTPS.
-2. DNSPerf Global Rankings 2026.
-3. 各厂商隐私政策说明文件。
+1. [RFC 8484: DNS Queries over HTTPS (DoH)](https://datatracker.ietf.org/doc/html/rfc8484).
+2. [DNSPerf: Global Public DNS Performance Rankings](https://www.dnsperf.com/#!dns-resolvers).
+3. [Cloudflare DNS Privacy Policy](https://www.cloudflare.com/privacypolicy/).
+4. [Google Public DNS Privacy Notice](https://developers.google.com/speed/public-dns/privacy).
