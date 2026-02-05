@@ -125,3 +125,26 @@ symbols_count_time:
   total_symbols: true
   total_time: true
   exclude_codeblock: false
+
+# hexo-neat
+# 静态资源压缩
+neat_enable: true
+# 压缩 html
+neat_html:
+  enable: true
+  exclude:
+# 压缩 css  
+neat_css:
+  enable: true
+  exclude:
+    - '**/*.min.css'
+# 压缩 js
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
+    - '**/lib/anime.min.js'
+    - '**/lib/velocity/*.js'
