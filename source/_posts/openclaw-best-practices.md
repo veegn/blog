@@ -50,7 +50,7 @@ ai_generated: true
 #### 2. 共享购物清单（Shared Shopping List）
 [参考链接：Shared Shopping List](https://www.hostinger.com/tutorials/openclaw-use-cases#h-2-build-a-shared-shopping-list-from-chat-messages)
 
-![OpenClaw 购物清单自动化流程](https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/wp-content/uploads/sites/2/2026/02/openclaw-shopping-list-automation-flow.jpg/public)
+![OpenClaw 购物清单自动化流程](/images/openclaw/openclaw-shopping-list-automation-flow.jpg)
 
 当家人们在群组中提到「需要买牛奶」时，OpenClaw 会自动解析并同步到您的共享清单中。
 
@@ -66,7 +66,7 @@ ai_generated: true
 #### 4. 会议转录与摘要（Meeting Transcription）
 [参考链接：Meeting Transcription](https://www.hostinger.com/tutorials/openclaw-use-cases#h-4-transcribe-meetings-and-extract-action-items)
 
-![OpenClaw 会议转录流程](https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/wp-content/uploads/sites/2/2026/02/openclaw-meeting-transcription-flow.jpg/public)
+![OpenClaw 会议转录流程](/images/openclaw/openclaw-meeting-transcription-flow.jpg)
 
 上传会议录音，几分钟内获取主要讨论要点、行动项清单及已确定的决策。
 
@@ -92,21 +92,21 @@ ai_generated: true
 #### 8. 收据自动录入（Receipt Parsing）
 [参考链接：Receipt Parsing](https://www.hostinger.com/tutorials/openclaw-use-cases#h-9-turn-receipts-into-an-expense-spreadsheet-entry)
 
-![OpenClaw 收据识别自动化流程](https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/wp-content/uploads/sites/2/2026/02/openclaw-receipt-to-spreadsheet-automation-flow.jpg/public)
+![OpenClaw 收据识别自动化流程](/images/openclaw/openclaw-receipt-to-spreadsheet-automation-flow.jpg)
 
 拍照上传收据，AI 自动提取商户、金额并录入报销电子表格。
 
 #### 9. 服务器健康监控（Server Monitoring）
 [参考链接：Server Health](https://www.hostinger.com/tutorials/openclaw-use-cases#h-17-monitor-server-health-and-get-alerts-when-something-breaks)
 
-![OpenClaw 服务器监控流程](https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/wp-content/uploads/sites/2/2026/02/openclaw-server-health-monitoring-automation-flow.jpg/public)
+![OpenClaw 服务器监控流程](/images/openclaw/openclaw-server-health-monitoring-automation-flow.jpg)
 
 实时监控 CPU、内存及磁盘占用，在达到预设阈值时通过聊天频道预警。
 
 #### 10. 私有文档助手（Ollama 结合）
 [参考链接：Private Document Assistant](https://www.hostinger.com/tutorials/openclaw-use-cases#h-24-run-a-private-document-assistant-with-ollama)
 
-![OpenClaw 私有文档助手流程](https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/wp-content/uploads/sites/2/2026/02/openclaw-private-document-assistant-automation-flow.jpg/public)
+![OpenClaw 私有文档助手流程](/images/openclaw/openclaw-private-document-assistant-automation-flow.jpg)
 
 结合本地运行的 Ollama，实现不离开私有服务器的文档搜索与问答，确保数据绝对隐私。
 
