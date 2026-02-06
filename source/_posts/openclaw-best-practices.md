@@ -10,7 +10,10 @@ tags:
 categories:
   - 技术教程
 description: 深入了解 OpenClaw——一款可自托管的开源 AI 代理，探索其在个人效率、开发运维和智能工作流中的 10 个最佳使用场景，并掌握安全部署的最佳实践。
+ai_generated: true
 ---
+
+> 🤖 **AI 生成文章声明**：本文由 OpenClaw 自动化脚本抓取全球最新实践并自动汇总生成。
 
 ## 引言：什么是 OpenClaw？
 
