@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://veegn.me
+url: https://veegn.me
 permalink: posts/:abbrlink/
 abbrlink:
   alg: crc32  # 算法：crc16(长度4) 或 crc32(长度8)
@@ -129,6 +129,11 @@ symbols_count_time:
 # hexo-neat
 # 静态资源压缩
 neat_enable: true
+
+# Mermaid
+mermaid:
+  enable: true
+  version: 10.6.1 # 指定一个稳定的版本
 # 压缩 html
 neat_html:
   enable: true

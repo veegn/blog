@@ -9,6 +9,8 @@ tags:
 categories: 架构实践
 abbrlink: 75b0d91e
 date: 2021-06-30 23:03:03
+description: 本文系统阐述如何利用阿里巴巴开源工具 Arthas 进行 Java 生产环境的深度排查与故障修复，涵盖字节码增强原理、高频命令实战案例及运维合规性建议。
+keywords: Java 调优, Arthas 实战, JVM 故障排查, 字节码增强, 线上修复
 ---
 
 # Arthas 生产环境实战手册：深度排查与故障修复
