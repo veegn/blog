@@ -18,6 +18,8 @@ ai_generated: true
 > 🤖 **AI 生成文章声明**：本文由 OpenClaw 自动化脚本抓取全球最新 Skills 动态并深度分析生成。
 > 📅 **实战数据更新**：2026 年 2 月 10 日
 
+![OpenClaw Skills 生态概览](/images/openclaw/openclaw-awesome-skills-banner.png)
+
 ## 一、 核心转向：从“全能 Agent”到“原子化 Skills”
 
 在 OpenClaw 的生态演进中，我们正看到一个明显的趋势：用户不再追求一个能处理所有问题的“庞大代理”，而是转向构建一套**原子化的技能（Skills）库**。
@@ -54,16 +56,13 @@ AI 不再局限于写代码，开始直接生成多媒体资产。
 以下是基于 [awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills) 精选的高价值实践：
 
 ### 1. 深度整合 GitHub 工作流
-![OpenClaw 会议转录流程](/images/openclaw/openclaw-meeting-transcription-flow.jpg)
-*(注：此处借用流程图示意自动化逻辑)*
 *   **实践**：通过 `github-pr` 技能，AI 可以自动拉取代码、运行本地 `test-runner` 技能，并将测试报告作为评论回复在 PR 下。这实现了原子化技能的**串联执行**。
 
 ### 2. 私有化文档与知识库 (RAG)
-![OpenClaw 私有文档助手流程](/images/openclaw/openclaw-private-document-assistant-automation-flow.jpg)
 *   **实践**：配合 `ollama` 技能和本地向量存储，AI 能在不将敏感数据上传至云端的情况下，实现毫秒级的文档语义检索。
 
 ### 3. 家庭协作与智能物联
-![OpenClaw 购物清单自动化流程](/images/openclaw/openclaw-shopping-list-automation-flow.jpg)
+![OpenClaw 技能全景图](/images/openclaw/openclaw-skills-landscape.png)
 *   **实践**：集成 `emporia-energy` 或 `tesla-control`，使 AI 能够根据电价波动自动调整充电策略或关闭大功率电器。
 
 ---
