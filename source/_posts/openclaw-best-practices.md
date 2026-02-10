@@ -10,6 +10,7 @@ tags:
   - 生产力
 categories:
   - 技术教程
+abbrlink: openclaw-guide
 description: 摆脱混乱的配置，侧重真实落地经验。本文重新梳理了 OpenClaw 的核心架构、三大实战领域及安全加固方案，助你构建高效、私密的个人 AI 助手。
 ai_generated: true
 ---
