@@ -1,12 +1,13 @@
 User-agent: *
 Allow: /
-Allow: /archives/
-Allow: /categories/
-Allow: /tags/
-Disallow: /vendors/
-Disallow: /js/
-Disallow: /css/
-Disallow: /fonts/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /lib/
+Disallow: /archives/
+Disallow: /categories/
+Disallow: /tags/
+Disallow: /404.html
 
 Sitemap: https://veegn.me/sitemap.xml
 Sitemap: https://veegn.me/baidusitemap.xml

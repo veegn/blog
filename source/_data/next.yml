@@ -1,0 +1,98 @@
+scheme: Gemini
+darkmode: true
+
+custom_file_path:
+  head: source/_data/head.swig
+  bodyEnd: source/_data/body-end.swig
+
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+
+sidebar:
+  position: left
+  display: post
+  padding: 18
+  offset: 12
+  onmobile: false
+
+toc:
+  enable: true
+  number: true
+  wrap: false
+  expand_all: false
+  max_depth: 6
+
+excerpt_description: true
+read_more_btn: true
+
+post_meta:
+  item_text: true
+  created_at: true
+  updated_at:
+    enable: true
+    another_day: true
+  categories: true
+
+symbols_count_time:
+  separated_meta: true
+  item_text_post: true
+  item_text_total: true
+  awl: 4
+  wpm: 275
+  suffix: mins.
+
+tag_icon: true
+
+text_align:
+  desktop: justify
+  mobile: justify
+
+codeblock:
+  highlight_theme: night bright
+  copy_button:
+    enable: true
+    show_result: true
+    style: mac
+
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+reading_progress:
+  enable: true
+  position: top
+  color: "#37c6c0"
+  height: 3px
+
+baidu_push: true
+
+comments:
+  style: tabs
+  active: gitalk
+  storage: true
+  lazyload: false
+
+gitalk:
+  enable: true
+  github_id: veegn
+  repo: veegn
+  client_id: 41354cb4c6a17e397577
+  client_secret: 39df478c00f8f4c6bf398683fd174368be8eab4e
+  admin_user: veegn
+  distraction_free_mode: true
+
+mermaid:
+  enable: true
+  theme: forest
+
+motion:
+  enable: true
+  async: false
+  transition:
+    post_block: fadeIn
+    post_header: slideDownIn
+    post_body: slideDownIn
+    coll_header: slideLeftIn
+    sidebar: slideUpIn

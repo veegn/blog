@@ -1,0 +1,7 @@
+interface:
+  display_name: "VEEGN Blog Maintenance"
+  short_description: "Maintain the VEEGN Hexo blog safely."
+  default_prompt: "Use $veegn-blog-maintenance to maintain this Hexo blog safely and consistently."
+
+policy:
+  allow_implicit_invocation: true

@@ -18,7 +18,7 @@
 
     <a href="{{ config.root }}" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">{{ title }}</h1>
+      <p class="site-title">{{ title }}</p>
       <span class="logo-line-after"><i></i></span>
     </a>
     {%- if subtitle %}
