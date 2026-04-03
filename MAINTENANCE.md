@@ -10,6 +10,7 @@ This repository is a Hexo blog that uses NexT as the upstream theme plus a small
 - Site-owned NexT config: `source/_data/next.yml`
 - Site-owned SEO filters: `scripts/seo/`
 - Crawl policy: `source/robots.txt`
+- IndexNow submission: `.github/workflows/deploy.yml` + `scripts/seo/submit-indexnow.js`
 
 ## Preferred Change Order
 
@@ -42,6 +43,8 @@ These remain in the theme because NexT's `custom_file_path` supports injection, 
 - Do not repeat the article title as the first Markdown `#` heading unless necessary.
 - Homepage and tag-page descriptions are generated centrally in `scripts/seo/page-descriptions.js`.
 - Duplicate title heading cleanup is handled in `scripts/seo/strip-duplicate-title-heading.js`.
+- `sitemap.xml` is pruned after generation in `scripts/seo/prune-sitemap.js` so it stays aligned with robots and IndexNow scope.
+- IndexNow submission is triggered after GitHub Pages deployment and requires the `INDEXNOW_KEY` repository secret.
 - If `robots.txt` changes, review whether sitemap behavior should also change.
 
 ## Head and Body Injection

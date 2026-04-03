@@ -36,6 +36,10 @@ jobs:
       - name: Build
         run: npx hexo generate
 
+      - name: Create IndexNow key file
+        if: ${{ secrets.INDEXNOW_KEY != '' }}
+        run: printf "%s" "${{ secrets.INDEXNOW_KEY }}" > "public/${{ secrets.INDEXNOW_KEY }}.txt"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -51,3 +55,24 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Submit IndexNow
+        if: ${{ secrets.INDEXNOW_KEY != '' }}
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          SITE_URL: https://veegn.me
+          PUBLIC_DIR: ./public
+        run: |
+          npx hexo generate
+          node scripts/seo/submit-indexnow.js

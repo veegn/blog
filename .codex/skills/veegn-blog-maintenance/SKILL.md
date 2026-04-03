@@ -24,7 +24,9 @@ Maintain this repo as a Hexo blog with NexT as the upstream theme and a small se
 - `source/_data/body-end.swig`: Google Translate widget and other late DOM injections.
 - `scripts/seo/strip-duplicate-title-heading.js`: removes a leading Markdown `#` when it duplicates the post title.
 - `scripts/seo/page-descriptions.js`: provides homepage and tag-page meta descriptions.
+- `scripts/seo/prune-sitemap.js`: removes non-index targets such as tags, categories, and 404 from `sitemap.xml` after generation.
 - `source/robots.txt`: crawl policy. Keep it aligned with sitemap strategy.
+- `.github/workflows/deploy.yml` + `scripts/seo/submit-indexnow.js`: IndexNow integration for Bing and participating search engines.
 
 ## Editing Rules
 
@@ -34,6 +36,7 @@ Maintain this repo as a Hexo blog with NexT as the upstream theme and a small se
 - Keep `source/_data/head.swig` small. Move widgets and scripts to `body-end.swig` unless they must run in `<head>`.
 - Do not add new site behavior to `themes/next/scripts/filters/locals.js` unless the same result is impossible from root-level scripts.
 - Avoid adding noindex or robots logic in multiple places. If crawl policy changes, review both `robots.txt` and sitemap behavior.
+- If deployment behavior changes, review whether IndexNow submission and key-file generation still run after publish.
 
 ## Theme Patch Policy
 
