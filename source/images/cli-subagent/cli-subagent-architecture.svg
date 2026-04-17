@@ -1,0 +1,69 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6fbff"/>
+      <stop offset="100%" stop-color="#eef7f1"/>
+    </linearGradient>
+    <linearGradient id="cardA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#153b50"/>
+      <stop offset="100%" stop-color="#245e73"/>
+    </linearGradient>
+    <linearGradient id="cardB" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f5a42"/>
+      <stop offset="100%" stop-color="#1c8a61"/>
+    </linearGradient>
+    <linearGradient id="cardC" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6d4c1d"/>
+      <stop offset="100%" stop-color="#ae7a2a"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#183240" flood-opacity="0.14"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#38657b"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <text x="90" y="90" font-size="42" font-family="Segoe UI, Arial, sans-serif" font-weight="700" fill="#153b50">
+    cli-subagent 架构：Antigravity 调度 Gemini CLI
+  </text>
+  <text x="90" y="132" font-size="20" font-family="Segoe UI, Arial, sans-serif" fill="#4b6977">
+    把 Google AI Pro 的 CLI 能力接入多 Agent 开发流水线，而不是停留在手工对话入口
+  </text>
+
+  <rect x="90" y="200" rx="28" ry="28" width="250" height="180" fill="url(#cardA)" filter="url(#shadow)"/>
+  <text x="125" y="260" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="700" fill="#ffffff">用户 / IDE</text>
+  <text x="125" y="302" font-size="20" font-family="Segoe UI, Arial, sans-serif" fill="#dceaf0">提出开发需求</text>
+  <text x="125" y="334" font-size="20" font-family="Segoe UI, Arial, sans-serif" fill="#dceaf0">查看结果与补丁</text>
+
+  <rect x="420" y="160" rx="30" ry="30" width="330" height="260" fill="url(#cardB)" filter="url(#shadow)"/>
+  <text x="460" y="224" font-size="38" font-family="Segoe UI, Arial, sans-serif" font-weight="700" fill="#ffffff">Antigravity</text>
+  <text x="460" y="270" font-size="22" font-family="Segoe UI, Arial, sans-serif" fill="#e2f5ec">主控 Agent / 任务拆解</text>
+  <text x="460" y="312" font-size="20" font-family="Segoe UI, Arial, sans-serif" fill="#e2f5ec">1. 理解需求</text>
+  <text x="460" y="342" font-size="20" font-family="Segoe UI, Arial, sans-serif" fill="#e2f5ec">2. 决定哪些任务外包</text>
+  <text x="460" y="372" font-size="20" font-family="Segoe UI, Arial, sans-serif" fill="#e2f5ec">3. 回收结果并整合</text>
+
+  <rect x="820" y="160" rx="30" ry="30" width="290" height="260" fill="url(#cardC)" filter="url(#shadow)"/>
+  <text x="856" y="224" font-size="36" font-family="Segoe UI, Arial, sans-serif" font-weight="700" fill="#ffffff">cli-subagent</text>
+  <text x="856" y="268" font-size="22" font-family="Segoe UI, Arial, sans-serif" fill="#fff0d8">MCP 桥接层</text>
+  <text x="856" y="312" font-size="20" font-family="Segoe UI, Arial, sans-serif" fill="#fff0d8">任务参数标准化</text>
+  <text x="856" y="342" font-size="20" font-family="Segoe UI, Arial, sans-serif" fill="#fff0d8">超时 / cwd / 输出控制</text>
+  <text x="856" y="372" font-size="20" font-family="Segoe UI, Arial, sans-serif" fill="#fff0d8">把 CLI 暴露为 MCP 工具</text>
+
+  <rect x="420" y="500" rx="28" ry="28" width="690" height="130" fill="#ffffff" stroke="#d7e8ee" stroke-width="2" filter="url(#shadow)"/>
+  <text x="460" y="555" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="700" fill="#173a4a">Gemini CLI / Google AI Pro 额度</text>
+  <text x="460" y="595" font-size="21" font-family="Segoe UI, Arial, sans-serif" fill="#4b6977">
+    作为细化任务执行器：生成代码、补测试、写文档、做局部分析
+  </text>
+
+  <path d="M340 290 C380 290, 390 290, 420 290" fill="none" stroke="#38657b" stroke-width="8" marker-end="url(#arrow)"/>
+  <path d="M750 290 C785 290, 790 290, 820 290" fill="none" stroke="#38657b" stroke-width="8" marker-end="url(#arrow)"/>
+  <path d="M965 420 C965 455, 965 468, 965 500" fill="none" stroke="#38657b" stroke-width="8" marker-end="url(#arrow)"/>
+  <path d="M770 560 C705 560, 630 560, 590 560" fill="none" stroke="#2f8f68" stroke-width="8" marker-end="url(#arrow)"/>
+
+  <text x="586" y="463" font-size="22" font-family="Segoe UI, Arial, sans-serif" font-weight="600" fill="#2f8f68">细粒度任务派发</text>
+  <text x="590" y="665" font-size="19" font-family="Segoe UI, Arial, sans-serif" fill="#58717d">
+    关键思路：主 Agent 负责规划，Gemini CLI 负责执行，MCP 负责把执行器变成标准能力
+  </text>
+</svg>

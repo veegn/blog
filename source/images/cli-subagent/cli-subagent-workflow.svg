@@ -1,0 +1,63 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffaf2"/>
+      <stop offset="100%" stop-color="#f5fbff"/>
+    </linearGradient>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#23404f" flood-opacity="0.14"/>
+    </filter>
+    <marker id="arrow2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#355c71"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="780" fill="url(#bg2)"/>
+  <text x="90" y="84" font-size="42" font-family="Segoe UI, Arial, sans-serif" font-weight="700" fill="#173a4a">
+    从想法到落地的执行流程
+  </text>
+  <text x="90" y="124" font-size="20" font-family="Segoe UI, Arial, sans-serif" fill="#546f7c">
+    把“额度分离”的观察，变成一个真正可复用的多 Agent 开发模式
+  </text>
+
+  <g filter="url(#shadow2)">
+    <rect x="90" y="180" width="1020" height="96" rx="24" fill="#173a4a"/>
+    <text x="130" y="238" font-size="30" font-family="Segoe UI, Arial, sans-serif" font-weight="700" fill="#ffffff">01 观察现象</text>
+    <text x="360" y="238" font-size="22" font-family="Segoe UI, Arial, sans-serif" fill="#dbe9ef">
+      Antigravity 与 Gemini CLI 的调用链路不同，实战中并不共用同一份 AI 额度池
+    </text>
+  </g>
+
+  <g filter="url(#shadow2)">
+    <rect x="90" y="320" width="1020" height="96" rx="24" fill="#1e6c52"/>
+    <text x="130" y="378" font-size="30" font-family="Segoe UI, Arial, sans-serif" font-weight="700" fill="#ffffff">02 形成假设</text>
+    <text x="360" y="378" font-size="22" font-family="Segoe UI, Arial, sans-serif" fill="#e4f4ec">
+      让 Antigravity 做总控，让 Gemini CLI 处理细粒度开发任务，就能把 Google AI Pro 变成执行产能
+    </text>
+  </g>
+
+  <g filter="url(#shadow2)">
+    <rect x="90" y="460" width="1020" height="96" rx="24" fill="#8d5d1d"/>
+    <text x="130" y="518" font-size="30" font-family="Segoe UI, Arial, sans-serif" font-weight="700" fill="#ffffff">03 选技术路径</text>
+    <text x="360" y="518" font-size="22" font-family="Segoe UI, Arial, sans-serif" fill="#fff1dc">
+      不做简单 shell 套壳，而是通过 MCP 把 Gemini CLI 封装为标准工具，供主 Agent 调度
+    </text>
+  </g>
+
+  <g filter="url(#shadow2)">
+    <rect x="90" y="600" width="1020" height="96" rx="24" fill="#7a294e"/>
+    <text x="130" y="658" font-size="30" font-family="Segoe UI, Arial, sans-serif" font-weight="700" fill="#ffffff">04 工程化落地</text>
+    <text x="360" y="658" font-size="22" font-family="Segoe UI, Arial, sans-serif" fill="#ffe7f1">
+      统一 cwd、超时、输出格式、失败恢复与任务边界，最终形成 cli-subagent 项目
+    </text>
+  </g>
+
+  <path d="M600 276 L600 320" stroke="#355c71" stroke-width="8" marker-end="url(#arrow2)" fill="none"/>
+  <path d="M600 416 L600 460" stroke="#355c71" stroke-width="8" marker-end="url(#arrow2)" fill="none"/>
+  <path d="M600 556 L600 600" stroke="#355c71" stroke-width="8" marker-end="url(#arrow2)" fill="none"/>
+
+  <circle cx="1040" cy="728" r="10" fill="#173a4a"/>
+  <circle cx="1072" cy="728" r="10" fill="#1e6c52"/>
+  <circle cx="1104" cy="728" r="10" fill="#8d5d1d"/>
+  <circle cx="1136" cy="728" r="10" fill="#7a294e"/>
+</svg>

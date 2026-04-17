@@ -1,0 +1,60 @@
+<svg width="1400" height="940" viewBox="0 0 1400 940" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2a2d"/>
+      <stop offset="100%" stop-color="#1e1f22"/>
+    </linearGradient>
+    <filter id="aShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="940" fill="url(#aBg)"/>
+  <text x="700" y="52" text-anchor="middle" font-size="22" font-family="Segoe UI, Arial, sans-serif" fill="#e1d0ad">
+    Settings - Models
+  </text>
+
+  <rect x="0" y="82" width="230" height="858" fill="#242427"/>
+  <text x="32" y="145" font-size="18" font-family="Segoe UI, Arial, sans-serif" fill="#9a9a9a">GLOBAL</text>
+  <rect x="12" y="235" width="208" height="54" rx="10" fill="#31363a"/>
+  <text x="28" y="270" font-size="24" font-family="Segoe UI, Arial, sans-serif" fill="#f2e2b2">Models</text>
+
+  <rect x="438" y="118" width="744" height="34" rx="8" fill="transparent"/>
+  <rect x="1074" y="118" width="86" height="38" rx="10" fill="#62708a"/>
+  <text x="1117" y="143" text-anchor="middle" font-size="18" font-family="Segoe UI, Arial, sans-serif" fill="#ffffff">Refresh</text>
+
+  <text x="442" y="194" font-size="18" font-family="Segoe UI, Arial, sans-serif" fill="#8d8d8d">MODEL CREDITS</text>
+  <rect x="442" y="212" width="744" height="226" rx="16" fill="#242427" stroke="#33363a" filter="url(#aShadow)"/>
+  <text x="470" y="262" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="700" fill="#ffffff">Enable AI Credit Overages</text>
+  <text x="470" y="300" font-size="16" font-family="Segoe UI, Arial, sans-serif" fill="#b3b3b3">When toggled on, Antigravity will use your AI credits once you're out of model quota.</text>
+  <text x="470" y="360" font-size="18" font-family="Segoe UI, Arial, sans-serif" fill="#ffffff">Available AI Credits: 928</text>
+  <rect x="1036" y="240" width="48" height="28" rx="14" fill="#0c6cb5"/>
+  <circle cx="1068" cy="254" r="12" fill="#ffffff"/>
+  <rect x="860" y="336" width="124" height="42" rx="10" fill="#677084"/>
+  <text x="922" y="363" text-anchor="middle" font-size="18" font-family="Segoe UI, Arial, sans-serif" fill="#ffffff">See Activity</text>
+  <rect x="996" y="336" width="182" height="42" rx="10" fill="#1a72c3"/>
+  <text x="1087" y="363" text-anchor="middle" font-size="18" font-family="Segoe UI, Arial, sans-serif" fill="#ffffff">Get More AI Credits</text>
+
+  <text x="442" y="474" font-size="18" font-family="Segoe UI, Arial, sans-serif" fill="#8d8d8d">MODEL QUOTA</text>
+  <rect x="442" y="492" width="744" height="372" rx="16" fill="#242427" stroke="#33363a" filter="url(#aShadow)"/>
+
+  <text x="470" y="548" font-size="20" font-family="Segoe UI, Arial, sans-serif" fill="#ffffff">Gemini 3.1 Pro (High)</text>
+  <text x="930" y="548" font-size="18" font-family="Segoe UI, Arial, sans-serif" fill="#b0b0b0">Refreshes in 6 days, 2 hours</text>
+  <rect x="470" y="574" width="564" height="6" rx="3" fill="#42464a"/>
+  <rect x="470" y="574" width="138" height="6" rx="3" fill="#ffd12c"/>
+
+  <text x="470" y="634" font-size="20" font-family="Segoe UI, Arial, sans-serif" fill="#ffffff">Gemini 3.1 Pro (Low)</text>
+  <text x="930" y="634" font-size="18" font-family="Segoe UI, Arial, sans-serif" fill="#b0b0b0">Refreshes in 6 days, 2 hours</text>
+  <rect x="470" y="660" width="564" height="6" rx="3" fill="#42464a"/>
+  <rect x="470" y="660" width="138" height="6" rx="3" fill="#ffd12c"/>
+
+  <text x="470" y="720" font-size="20" font-family="Segoe UI, Arial, sans-serif" fill="#ffffff">Gemini 3 Flash</text>
+  <text x="930" y="720" font-size="18" font-family="Segoe UI, Arial, sans-serif" fill="#b0b0b0">Refreshes in 4 hours, 59 minutes</text>
+  <rect x="470" y="746" width="564" height="6" rx="3" fill="#42464a"/>
+  <rect x="470" y="746" width="420" height="6" rx="3" fill="#f0f0f0"/>
+
+  <text x="470" y="806" font-size="20" font-family="Segoe UI, Arial, sans-serif" fill="#ffffff">Claude Sonnet 4.6 (Thinking)</text>
+  <text x="930" y="806" font-size="18" font-family="Segoe UI, Arial, sans-serif" fill="#b0b0b0">Refreshes in 39 minutes</text>
+  <rect x="470" y="832" width="564" height="6" rx="3" fill="#42464a"/>
+  <rect x="470" y="832" width="138" height="6" rx="3" fill="#ffd12c"/>
+</svg>
