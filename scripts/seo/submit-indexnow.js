@@ -89,7 +89,9 @@ async function main() {
   console.log(`Submitted ${urlList.length} URLs to IndexNow.`);
 }
 
-main().catch(error => {
-  console.error(error);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch(error => {
+    console.error(error);
+    process.exit(1);
+  });
+}
