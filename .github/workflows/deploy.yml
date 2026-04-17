@@ -20,6 +20,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -37,8 +39,8 @@ jobs:
         run: npx hexo generate
 
       - name: Create IndexNow key file
-        if: ${{ secrets.INDEXNOW_KEY != '' }}
-        run: printf "%s" "${{ secrets.INDEXNOW_KEY }}" > "public/${{ secrets.INDEXNOW_KEY }}.txt"
+        if: ${{ env.INDEXNOW_KEY != '' }}
+        run: printf "%s" "${INDEXNOW_KEY}" > "public/${INDEXNOW_KEY}.txt"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -51,6 +53,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    env:
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
@@ -68,9 +72,8 @@ jobs:
         run: npm install
 
       - name: Submit IndexNow
-        if: ${{ secrets.INDEXNOW_KEY != '' }}
+        if: ${{ env.INDEXNOW_KEY != '' }}
         env:
-          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
           SITE_URL: https://veegn.me
           PUBLIC_DIR: ./public
         run: |
