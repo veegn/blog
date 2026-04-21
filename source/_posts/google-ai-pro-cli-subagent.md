@@ -34,7 +34,7 @@ ai_generated: true
 为什么最后决定用 MCP 把 Gemini CLI 包成一个“可以被 Antigravity 使唤”的子 Agent；  
 以及这个想法最后怎么长成了 [cli-subagent](https://github.com/veegn/cli-subagent)。
 
-![cli-subagent 架构图](/images/cli-subagent/cli-subagent-architecture.svg)
+<img src="/images/cli-subagent/cli-subagent-architecture.svg" alt="cli-subagent 架构图" style="display:block;width:100%;height:auto;max-width:1200px;margin:0 auto 24px;object-fit:contain;">
 
 <!-- more -->
 
@@ -82,11 +82,11 @@ ai_generated: true
 
 下面这两张图，差不多就是我当时脑子里“等一下，这事能搞”的那个瞬间。
 
-![图1：Gemini CLI 的 token / model usage 面板](/images/cli-subagent/gemini-cli-quota.svg)
+<img src="/images/cli-subagent/gemini-cli-quota.svg" alt="图1：Gemini CLI 的 token / model usage 面板" style="display:block;width:100%;height:auto;max-width:1400px;margin:0 auto 16px;object-fit:contain;">
 
 *图 1：Gemini CLI 侧可以直接看到独立的模型使用面板，包含 Flash、Flash Lite、Pro 等不同模型的使用比例与重置时间。*
 
-![图2：Antigravity 的 token / model quota 面板](/images/cli-subagent/antigravity-quota.svg)
+<img src="/images/cli-subagent/antigravity-quota.svg" alt="图2：Antigravity 的 token / model quota 面板" style="display:block;width:100%;height:auto;max-width:1400px;margin:0 auto 16px;object-fit:contain;">
 
 *图 2：Antigravity 侧则展示了另一套配额体系，包括 AI Credits、模型配额以及各模型各自的刷新周期。*
 
@@ -162,7 +162,7 @@ flowchart LR
 
 下面这张图，基本就是 `cli-subagent` 的核心思路：
 
-![cli-subagent 工作流图](/images/cli-subagent/cli-subagent-workflow.svg)
+<img src="/images/cli-subagent/cli-subagent-workflow.svg" alt="cli-subagent 工作流图" style="display:block;width:100%;height:auto;max-width:1200px;margin:0 auto 24px;object-fit:contain;">
 
 ### 3.1 角色分工
 
