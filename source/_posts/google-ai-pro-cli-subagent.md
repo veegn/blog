@@ -118,14 +118,14 @@ export ANTHROPIC_BASE_URL="http://127.0.0.1:8317"
 export ANTHROPIC_AUTH_TOKEN="sk-dummy"
 
 # 针对 Claude Code 2.x 版本，我们需要显式映射对应的默认模型
-# 把 Anthropic 的模型名称对应到你想白嫖的 Gemini 模型（例如 gemini-2.5-pro 和 flash）
-export ANTHROPIC_DEFAULT_OPUS_MODEL="gemini-2.5-pro"
-export ANTHROPIC_DEFAULT_SONNET_MODEL="gemini-2.5-flash"
-export ANTHROPIC_DEFAULT_HAIKU_MODEL="gemini-2.5-flash"
+# 把 Anthropic 的模型名称对应到你想白嫖的 Gemini 模型（采用当前最新模型）
+export ANTHROPIC_DEFAULT_OPUS_MODEL="gemini-3.1-pro-preview"
+export ANTHROPIC_DEFAULT_SONNET_MODEL="gemini-3-flash-preview"
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="gemini-3.1-flash-lite-preview"
 
 # (可选) 如果你还在使用 Claude Code 1.x 版本，则应配置以下变量：
-export ANTHROPIC_MODEL="gemini-2.5-pro"
-export ANTHROPIC_SMALL_FAST_MODEL="gemini-2.5-flash"
+export ANTHROPIC_MODEL="gemini-3.1-pro-preview"
+export ANTHROPIC_SMALL_FAST_MODEL="gemini-3-flash-preview"
 ```
 
 #### 步骤 3：享受跨越生态的畅快
