@@ -131,10 +131,6 @@ symbols_count_time:
 # 静态资源压缩
 neat_enable: true
 
-# Mermaid
-mermaid:
-  enable: true
-  version: 10.6.1 # 指定一个稳定的版本
 # 压缩 html
 neat_html:
   enable: true

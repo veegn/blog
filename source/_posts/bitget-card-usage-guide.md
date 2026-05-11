@@ -26,14 +26,14 @@ ai_generated: true
 
 通过 Bitget Card，你的加密资产不再是交易所里的一串数字，而是变成了随时可用的购买力：
 
-```mermaid
+{% mermaid %}
 graph LR
     A[Bitget 账户/钱包] -->|持有 USDT/USDC| B(Bitget Card)
     B -->|绑定| C{支付场景}
     C -->|AI 订阅| D[ChatGPT / Claude / Midjourney]
     C -->|移动支付| E[微信 / 支付宝 / Apple Pay]
     C -->|线下刷卡| F[全球 Visa/Mastercard 商家]
-```
+{% endmermaid %}
 
 ---
 
