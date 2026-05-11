@@ -96,9 +96,28 @@ go build -o cliproxyapi .
 
 除了基本的配置和分发，CLIProxyAPI 的一个核心应用场景在于**格式转换与跨提供商调度**。这意味着你可以配置一个原本只支持 Anthropic 协议的工具（比如 Claude Code），让它在后台实际上调用由 Gemini CLI 提供的免费或 Pro 额度。
 
-1. **设置 Gemini CLI 的凭证**：通过 CPA 内置的 OAuth 流程，使用你的 Google 账号登入 Gemini CLI。
-2. **在 Claude Code 中配置 API 代理**：修改 Claude Code 的配置，将 API Endpoint 指向你本地的 CLIProxyAPI 端口（例如 `http://127.0.0.1:8080/v1`）。
-3. **享受跨越生态的畅快**：代理服务器接收到 Claude Code 的标准 Anthropic 请求后，会自动将其转换为 Google 的通信格式，提交给 Gemini CLI 服务处理。完成后再将结果以 Anthropic 的格式返回。
+具体操作步骤如下：
+
+1. **设置 Gemini CLI 的凭证**：
+   在终端运行 `cliproxyapi` 启动服务后，系统会提供登录指引。你可以通过 CPA 提供的 OAuth 流程使用你的 Google 账号登入 Gemini CLI 获取授权。
+   
+2. **在环境变量中配置 API 代理**：
+   在启动 Claude Code 之前，需要设置以下环境变量，将流量劫持到你的 CLIProxyAPI 端口（假设服务运行在 `8317` 端口）：
+   
+   ```bash
+   # 指定 API 代理地址和伪造的 Token
+   export ANTHROPIC_BASE_URL="http://127.0.0.1:8317"
+   export ANTHROPIC_AUTH_TOKEN="sk-dummy"
+   
+   # 如果使用 Claude Code 2.x 版本，需要显式指定不同级别所映射的模型别名
+   # 这里你可以将其映射为 Gemini 的模型，例如 gemini-2.5-pro 等
+   export ANTHROPIC_DEFAULT_OPUS_MODEL="gemini-2.5-pro"
+   export ANTHROPIC_DEFAULT_SONNET_MODEL="gemini-2.5-flash"
+   export ANTHROPIC_DEFAULT_HAIKU_MODEL="gemini-2.5-flash"
+   ```
+
+3. **享受跨越生态的畅快**：
+   配置完成后直接运行 `claude` 即可。此时代理服务器接收到 Claude Code 发出的标准 Anthropic 请求后，会自动将其转换为 Google 的通信格式，提交给 Gemini CLI 服务处理。完成后再将结果以 Anthropic 的格式返回。
 
 这种玩法特别适合重度使用 Claude Code 工作流，但手握大量闲置 Google AI Pro（或者想要白嫖 Gemini 免费额度）的开发者。
 
