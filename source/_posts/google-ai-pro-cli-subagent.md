@@ -98,28 +98,49 @@ go build -o cliproxyapi .
 
 具体操作步骤如下：
 
-1. **设置 Gemini CLI 的凭证**：
-   在终端运行 `cliproxyapi` 启动服务后，系统会提供登录指引。你可以通过 CPA 提供的 OAuth 流程使用你的 Google 账号登入 Gemini CLI 获取授权。
-   
-2. **在环境变量中配置 API 代理**：
-   在启动 Claude Code 之前，需要设置以下环境变量，将流量劫持到你的 CLIProxyAPI 端口（假设服务运行在 `8317` 端口）：
-   
-   ```bash
-   # 指定 API 代理地址和伪造的 Token
-   export ANTHROPIC_BASE_URL="http://127.0.0.1:8317"
-   export ANTHROPIC_AUTH_TOKEN="sk-dummy"
-   
-   # 如果使用 Claude Code 2.x 版本，需要显式指定不同级别所映射的模型别名
-   # 这里你可以将其映射为 Gemini 的模型，例如 gemini-2.5-pro 等
-   export ANTHROPIC_DEFAULT_OPUS_MODEL="gemini-2.5-pro"
-   export ANTHROPIC_DEFAULT_SONNET_MODEL="gemini-2.5-flash"
-   export ANTHROPIC_DEFAULT_HAIKU_MODEL="gemini-2.5-flash"
-   ```
+#### 步骤 1：设置 Gemini CLI 的凭证
+在终端运行 `cliproxyapi` 启动服务后，你需要登录你的 Google 账号来获取授权。如果本地配置尚未生成，你可以通过简单的 CLI 指令触发内置的 OAuth 流程。
 
-3. **享受跨越生态的畅快**：
-   配置完成后直接运行 `claude` 即可。此时代理服务器接收到 Claude Code 发出的标准 Anthropic 请求后，会自动将其转换为 Google 的通信格式，提交给 Gemini CLI 服务处理。完成后再将结果以 Anthropic 的格式返回。
+```bash
+# 启动 cliproxyapi
+./cliproxyapi
+```
+*(在启动后的控制台中按提示完成授权登录即可)*
 
-这种玩法特别适合重度使用 Claude Code 工作流，但手握大量闲置 Google AI Pro（或者想要白嫖 Gemini 免费额度）的开发者。
+#### 步骤 2：在环境变量中配置 API 代理
+在启动 Claude Code 之前，需要设置以下环境变量，将流量劫持到你的 CLIProxyAPI 端口（默认运行在 `8317` 端口）。这会覆盖 Claude Code 默认的 Anthropic 官方请求地址：
+
+```bash
+# 指定 API 代理地址，指向本地运行的 CLIProxyAPI
+export ANTHROPIC_BASE_URL="http://127.0.0.1:8317"
+
+# Token 可以随便填一个伪造的值，因为 CLIProxyAPI 内部会用它自己保存的 OAuth Credential
+export ANTHROPIC_AUTH_TOKEN="sk-dummy"
+
+# 针对 Claude Code 2.x 版本，我们需要显式映射对应的默认模型
+# 把 Anthropic 的模型名称对应到你想白嫖的 Gemini 模型（例如 gemini-2.5-pro 和 flash）
+export ANTHROPIC_DEFAULT_OPUS_MODEL="gemini-2.5-pro"
+export ANTHROPIC_DEFAULT_SONNET_MODEL="gemini-2.5-flash"
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="gemini-2.5-flash"
+
+# (可选) 如果你还在使用 Claude Code 1.x 版本，则应配置以下变量：
+export ANTHROPIC_MODEL="gemini-2.5-pro"
+export ANTHROPIC_SMALL_FAST_MODEL="gemini-2.5-flash"
+```
+
+#### 步骤 3：享受跨越生态的畅快
+配置完环境变量后，直接运行 `claude` 即可。
+
+```bash
+claude
+```
+
+此时，Claude Code 发出的标准 Anthropic 格式请求会被转发到你的 `127.0.0.1:8317` 代理服务器。CLIProxyAPI 在接收到请求后，会自动：
+1. 将 Anthropic 格式转换为 Google Gemini 支持的格式。
+2. 使用你通过 OAuth 获取的凭证请求 Gemini CLI 接口。
+3. 接收响应后，再将其转换为标准 Anthropic 格式还给 Claude Code。
+
+这种玩法完美地桥接了不同工具生态，让你既能享受 Claude Code 的强劲工作流，又能完美利用手握的大量闲置 Google AI Pro（或 Gemini 免费额度）。
 
 ---
 
