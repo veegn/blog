@@ -131,9 +131,17 @@ export ANTHROPIC_SMALL_FAST_MODEL="gemini-3-flash-preview"
 #### 步骤 3：享受跨越生态的畅快
 配置完环境变量后，直接运行 `claude` 即可。
 
+为了方便日常使用，你可以将这些环境变量封装到一个便捷的启动脚本或 Bash Alias 中，例如在你的 `~/.bashrc` 或 `~/.zshrc` 中添加：
+
 ```bash
-claude
+alias cpa-claude='export ANTHROPIC_BASE_URL="http://127.0.0.1:8317" \
+export ANTHROPIC_AUTH_TOKEN="sk-dummy" \
+export ANTHROPIC_DEFAULT_OPUS_MODEL="gemini-3.1-pro-preview" \
+export ANTHROPIC_DEFAULT_SONNET_MODEL="gemini-3-flash-preview" \
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="gemini-3.1-flash-lite-preview" \
+&& claude'
 ```
+这样你只需要输入 `cpa-claude` 即可直接拉起使用 Gemini 额度的 Claude Code。
 
 此时，Claude Code 发出的标准 Anthropic 格式请求会被转发到你的 `127.0.0.1:8317` 代理服务器。CLIProxyAPI 在接收到请求后，会自动：
 1. 将 Anthropic 格式转换为 Google Gemini 支持的格式。
@@ -141,6 +149,21 @@ claude
 3. 接收响应后，再将其转换为标准 Anthropic 格式还给 Claude Code。
 
 这种玩法完美地桥接了不同工具生态，让你既能享受 Claude Code 的强劲工作流，又能完美利用手握的大量闲置 Google AI Pro（或 Gemini 免费额度）。
+
+<img src="/images/cli-subagent/cli-subagent-workflow.svg" alt="CLIProxyAPI 配合 Claude Code 架构图" style="display:block;width:100%;height:auto;max-width:1200px;margin:0 auto 24px;object-fit:contain;">
+
+### 3.5 常见问题与排错 (Troubleshooting)
+
+在配置多模型代理时，你可能会遇到一些常见问题：
+
+- **401 Unauthorized / Token Invalid**：请确保你的 `cliproxyapi` 后台服务正在运行，且已经正确完成了 OAuth 登录。如果提示凭证过期，请尝试重新登录。
+- **端口冲突**：如果 `8317` 端口被占用，请在 `cliproxyapi` 配置中修改绑定端口，并同步更新环境变量 `ANTHROPIC_BASE_URL`。
+- **模型不匹配或不支持的参数**：如果在运行 Claude Code 时提示找不到模型，请检查 `ANTHROPIC_DEFAULT_OPUS_MODEL` 等变量是否正确映射到了上游服务支持的 Gemini 模型名称（如 `gemini-3.1-pro-preview`）。
+
+### 3.6 最佳实践与限制
+
+- **并发与速率限制**：如果你使用免费账户的 OAuth 凭证，可能会遇到上游服务的速率限制（Rate Limits）。如果你高频使用自动补全或代码生成，建议绑定拥有足够额度的订阅账户（如 Google AI Pro）。
+- **延迟考量**：由于存在一层代理转换，可能会带来少许的毫秒级延迟增加。不过相比于多账号调度带来的收益，这部分延迟在实际的 CLI 开发工作流中几乎可以忽略不计。
 
 ---
 
