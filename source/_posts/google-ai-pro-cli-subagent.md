@@ -131,7 +131,10 @@ export ANTHROPIC_SMALL_FAST_MODEL="gemini-3-flash-preview"
 #### 步骤 3：享受跨越生态的畅快
 配置完环境变量后，直接运行 `claude` 即可。
 
-为了方便日常使用，你可以将这些环境变量封装到一个便捷的启动脚本或 Bash Alias 中，例如在你的 `~/.bashrc` 或 `~/.zshrc` 中添加：
+为了方便日常使用，我们提供了以下三种固定配置的方式：
+
+**方法 A：Bash Alias (推荐用于快速切换)**
+你可以将这些环境变量封装到一个便捷的启动别名中。在你的 `~/.bashrc` 或 `~/.zshrc` 中添加：
 
 ```bash
 alias cpa-claude='export ANTHROPIC_BASE_URL="http://127.0.0.1:8317" \
@@ -141,7 +144,22 @@ export ANTHROPIC_DEFAULT_SONNET_MODEL="gemini-3-flash-preview" \
 export ANTHROPIC_DEFAULT_HAIKU_MODEL="gemini-3.1-flash-lite-preview" \
 && claude'
 ```
-这样你只需要输入 `cpa-claude` 即可直接拉起使用 Gemini 额度的 Claude Code。
+这样你只需要输入 `cpa-claude` 即可拉走代理的 Claude Code，而输入 `claude` 则依旧走官方 API。
+
+**方法 B：全局配置 (推荐用于一劳永逸)**
+你可以将上述 `export` 环境变量的内容直接写入到你的 `~/.bashrc` 或 `~/.zshrc` 中。这样任何时候你打开终端，所有的 Claude Code 调用都会默认走代理：
+
+```bash
+# 在 ~/.zshrc 或 ~/.bashrc 底部添加
+export ANTHROPIC_BASE_URL="http://127.0.0.1:8317"
+export ANTHROPIC_AUTH_TOKEN="sk-dummy"
+export ANTHROPIC_DEFAULT_OPUS_MODEL="gemini-3.1-pro-preview"
+export ANTHROPIC_DEFAULT_SONNET_MODEL="gemini-3-flash-preview"
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="gemini-3.1-flash-lite-preview"
+```
+
+**方法 C：项目级局部配置**
+如果不希望全局修改，你也可以在需要用到 AI 的项目根目录下建立 `.env` 文件，再配合 `direnv` 工具，在进入该目录时自动加载上述变量。
 
 此时，Claude Code 发出的标准 Anthropic 格式请求会被转发到你的 `127.0.0.1:8317` 代理服务器。CLIProxyAPI 在接收到请求后，会自动：
 1. 将 Anthropic 格式转换为 Google Gemini 支持的格式。
