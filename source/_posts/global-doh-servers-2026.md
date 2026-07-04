@@ -57,6 +57,84 @@ DoH 的核心优势包括：
 
 ---
 
+### 📋 国际 DoH 服务完整清单（官方文档整理，未实测）
+
+上面的"国际参考"表格聚焦国内可直连探测的少数服务。下面整理了海外主流公共 DoH 服务的完整清单，每行含 DoH URL、支持的请求方法、是否提供 JSON API 以及隐私/日志策略，方便在代理/海外节点下选用不同类型的过滤方案（默认/家庭/安全/不安全/解锁等）。
+
+> 数据来源：[公共 DoH 列表笔记](https://notes.dayti.de/note/doh-list)（整理验证时间 2026-06-23）。本表为官方资料标注，**未进行延迟实测**，可用性请结合自身网络环境自行验证。
+
+#### Cloudflare 家族
+
+| 服务名称 | DoH URL | 方法 (GET/POST) | JSON API | 隐私/日志策略 |
+| :--- | :--- | :--- | :--- | :--- |
+| **Cloudflare 1.1.1.1** | `https://cloudflare-dns.com/dns-query` | GET/POST | 支持 | **无日志**（24 小时临时记录，详见隐私政策） |
+| **Cloudflare (Family)** | `https://family.cloudflare-dns.com/dns-query` | GET/POST | 支持 | **无日志**（仅过滤成人/恶意域名） |
+| **Cloudflare (Security)** | `https://security.cloudflare-dns.com/dns-query` | GET/POST | 支持 | **无日志**（仅过滤恶意域名） |
+| **Cloudflare (Mozilla)** | `https://mozilla.cloudflare-dns.com/dns-query` | GET/POST | 支持 | **无日志**（与默认服务一致） |
+
+#### Google / Quad9 / NextDNS
+
+| 服务名称 | DoH URL | 方法 (GET/POST) | JSON API | 隐私/日志策略 |
+| :--- | :--- | :--- | :--- | :--- |
+| **Google Public DNS (RFC)** | `https://dns.google/dns-query` | GET/POST | 支持 | **部分日志**（匿名查询亦保留日志） |
+| **Google Public DNS (JSON)** | `https://dns.google/resolve?name=...&type=...` | GET | JSON 专用 | **部分日志** |
+| **Quad9 (安全版)** | `https://dns.quad9.net/dns-query` | GET/POST | 支持 | **无日志**（隐私至上） |
+| **Quad9 (不安全版)** | `https://dns10.quad9.net/dns-query` | GET/POST | 支持 | **无日志** |
+| **NextDNS** | `https://dns.nextdns.io/<YourID>` | GET/POST | 支持 | **用户可控**（可调日志时长或禁用） |
+
+#### AdGuard 家族
+
+| 服务名称 | DoH URL | 方法 (GET/POST) | JSON API | 隐私/日志策略 |
+| :--- | :--- | :--- | :--- | :--- |
+| **AdGuard DNS (默认)** | `https://dns.adguard-dns.com/dns-query` | GET/POST | 支持 | **无日志** |
+| **AdGuard DNS (家庭)** | `https://family.adguard-dns.com/dns-query` | GET/POST | 支持 | **无日志**（附加成人内容过滤） |
+| **AdGuard DNS (非过滤)** | `https://unfiltered.adguard-dns.com/dns-query` | GET/POST | 支持 | **无日志**（不进行任何内容过滤） |
+
+#### OpenDNS / CleanBrowsing / CIRA / Control D / Wikimedia
+
+| 服务名称 | DoH URL | 方法 (GET/POST) | JSON API | 隐私/日志策略 |
+| :--- | :--- | :--- | :--- | :--- |
+| **OpenDNS (Cisco)** | `https://doh.opendns.com/dns-query` | GET/POST? | 支持 | **依赖 IP**（仅注册 IP 应用自定义过滤） |
+| **CleanBrowsing (家庭过滤)** | `https://doh.cleanbrowsing.org/doh/family-filter/` | GET/POST | 支持 | 部分日志 |
+| **CleanBrowsing (成人过滤)** | `https://doh.cleanbrowsing.org/doh/adult-filter/` | GET/POST | 支持 | 部分日志 |
+| **CleanBrowsing (安全过滤)** | `https://doh.cleanbrowsing.org/doh/security-filter/` | GET/POST | 支持 | 部分日志 |
+| **CIRA (加拿大盾)** | `https://private.canadianshield.cira.ca/dns-query` | GET/POST | 支持 | 未公开 |
+| **CIRA (Protected)** | `https://protected.canadianshield.cira.ca/dns-query` | GET/POST | 支持 | 未公开 |
+| **CIRA (Family)** | `https://family.canadianshield.cira.ca/dns-query` | GET/POST | 支持 | 未公开 |
+| **Control D (默认)** | `https://freedns.controld.com/p0` | GET/POST | 支持 | **无日志**（免费服务） |
+| **Control D (家庭)** | `https://freedns.controld.com/family` | GET/POST | 支持 | **无日志** |
+| **Control D (解锁)** | `https://freedns.controld.com/uncensored` | GET/POST | 支持 | **无日志** |
+| **Wikimedia DNS (测试)** | `https://wikimedia-dns.org/dns-query`（推测） | GET/POST | 支持 | **无日志**（暂未公布详细政策） |
+
+#### 按隐私友好度快速归类
+
+| 隐私等级 | 服务示例 |
+| :--- | :--- |
+| **无日志** | Cloudflare、Quad9、AdGuard、Control D、CIRA（推测） |
+| **部分日志** | Google、OpenDNS（依赖 IP）、CleanBrowsing |
+| **未知 / 用户可控** | NextDNS、Wikimedia DNS、其他社区小众服务 |
+
+#### 调用示例
+
+```bash
+# Cloudflare DoH，GET 方法取 A 记录，JSON 响应
+curl -H 'accept: application/dns-json' \
+  'https://cloudflare-dns.com/dns-query?name=example.com&type=A'
+```
+
+```python
+# Google Public DNS，Python 调用
+import requests
+r = requests.get(
+    'https://dns.google/dns-query',
+    params={'name': 'example.com', 'type': 'A'},
+    headers={'accept': 'application/dns-json'},
+)
+print(r.status_code, r.json())
+```
+
+---
+
 ## 3. 如何在你的设备上启用 DoH？
 
 ### Chrome / Edge 浏览器
@@ -81,3 +159,4 @@ DoH 是目前保护个人网络隐私最简单也最有效的方法之一。在 
 2. [DNSPerf: Global Public DNS Performance Rankings](https://www.dnsperf.com/#!dns-resolvers).
 3. [Cloudflare DNS Privacy Policy](https://www.cloudflare.com/privacypolicy/).
 4. [Google Public DNS Privacy Notice](https://developers.google.com/speed/public-dns/privacy).
+5. [公共 DoH 列表笔记 (notes.dayti.de)](https://notes.dayti.de/note/doh-list) — 海外公共 DoH 服务官方文档整理清单。
